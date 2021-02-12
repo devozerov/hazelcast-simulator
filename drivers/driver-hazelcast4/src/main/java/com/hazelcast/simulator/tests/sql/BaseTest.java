@@ -22,12 +22,6 @@ public abstract class BaseTest extends HazelcastTest {
 
     @Setup
     public void setup() {
-        try {
-            Class.forName("com.hazelcast.sql.impl.client.SqlPageMarker");
-        } catch (Exception e) {
-            throw new IllegalStateException("The new HZ 4.2 is not in the classpath");
-        }
-
         if (count < 100) {
             throw new IllegalArgumentException("count must be greater than 100");
         }
